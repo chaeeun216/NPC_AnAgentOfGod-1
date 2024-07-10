@@ -28,4 +28,18 @@ public class DatabaseManager : MonoBehaviour
             isFinish = true;
         }
     }
+
+    // _StartNum ~_EndNum 사이의 대사를 가지고 옴.
+    public Dialogue[] GetDialogue(int _StartNum, int _EndNum)
+    {
+        List<Dialogue> dialogueList = new List<Dialogue>();
+
+        for (int i = _StartNum; i <= _EndNum; i++)
+        {
+            dialogueList.Add(dialogueDic[i]);
+        }
+
+        return dialogueList.ToArray();
+    }
+
 }
