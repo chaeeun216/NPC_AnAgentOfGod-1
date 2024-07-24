@@ -24,17 +24,16 @@ public class DialogueParser : MonoBehaviour
             Dialogue dialogue = new Dialogue(); // 캐릭터 한 명의 대사들
 
             dialogue.name = row[1];
-            Debug.Log(row[1]);
-
+            Debug.Log(row[1]); // 디버깅
             List<string> contextList = new List<string>();
-            //List<string> spriteList = new List<string>(); // 사진리스트
+            List<string> spriteList = new List<string>(); // 사진리스트
             //List<string> cutsceneList = new List<string>(); // 컷신 이미지 리스트
 
             do
             { 
                 contextList.Add(row[2]);
-                Debug.Log(row[2]);
-            //    spriteList.Add(row[3]); // 엑셀 3번째 내용
+                Debug.Log(row[2]); // 디버깅
+                spriteList.Add(row[3]); // 엑셀 3번째 내용
 
                 // 다음 줄 미리 비교
                 if (++i < data.Length)
@@ -49,7 +48,7 @@ public class DialogueParser : MonoBehaviour
             } while (row[0].ToString() == "");  // 다음 줄 캐릭터 이름이 공백이면 대사를 더 채우기
 
             dialogue.contexts = contextList.ToArray();   // 리스트를 배열로
-            //dialogue.spriteName = spriteList.ToArray();
+            dialogue.spriteName = spriteList.ToArray();
             //dialogue.cutsceneName = cutsceneList.ToArray();
             dialogueList.Add(dialogue); // 한캐릭터가 다른 캐릭터가 말하기 전까지 모든 대사들이 묶여서 추가됨
         }

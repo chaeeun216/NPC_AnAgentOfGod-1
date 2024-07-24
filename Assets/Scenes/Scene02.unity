@@ -173,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &247797017
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1845,7 +1845,7 @@ MonoBehaviour:
   go_standingImage: {fileID: 247797016}
   txt_Dialogue: {fileID: 1196369332}
   txt_Name: {fileID: 395104990}
-  textDelay: 0.01
+  textDelay: 0.02
 --- !u!1 &513158383
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,7 +6191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9488f7fe6dd29b4f90cdf235bd0fd66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csv_fileName: dialoguetest
+  csv_fileName: dialogue
 --- !u!114 &992330745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6472,30 +6472,54 @@ MonoBehaviour:
     name: "\uB300\uC0AC \uD14C\uC2A4\uD2B8"
     line: {x: 1, y: 12}
     dialogues:
-    - name: 
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
-    - name: 
+      spriteName: []
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
-    - name: 
+      spriteName: []
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
-    - name: 
+      spriteName: []
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
-    - name: 
+      spriteName: []
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
-    - name: 
+      spriteName: []
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
-    - name: 
+      spriteName: []
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
-    - name: 
+      spriteName: []
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
-    - name: 
+      spriteName: []
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
-    - name: 
+      spriteName: []
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
-    - name: 
+      spriteName: []
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
-    - name: 
+      spriteName: []
+    - tf_standing: {fileID: 247797017}
+      name: 
       contexts: []
+      spriteName: []
 --- !u!1 &1056013866
 GameObject:
   m_ObjectHideFlags: 0

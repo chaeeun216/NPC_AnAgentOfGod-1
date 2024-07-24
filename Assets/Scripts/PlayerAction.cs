@@ -15,7 +15,6 @@ public class PlayerAction : MonoBehaviour
     public Vector3 dirVec;
     public RaycastHit2D playerRayHit;
 
-    InteractionController theInteractionController;
     public InputManager theInputManager;
 
      void Awake()

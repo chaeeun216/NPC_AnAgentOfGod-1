@@ -73,11 +73,11 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    //void ChangeSprite()
-    //{
-    //    // 캐릭터가 대사를 할 때, spriteName이 공백이 아니면 이미지 변경
-    //    StartCoroutine(theSpriteManager.SpriteChangeCoroutine(dialogues[lineCount].tf_target, dialogues[lineCount].spriteName[contextCount]));
-    //}
+    void ChangeSprite()
+    {
+        // 캐릭터가 대사를 할 때, spriteName이 공백이 아니면 이미지 변경
+        StartCoroutine(theSpriteManager.SpriteChangeCoroutine(dialogues[lineCount].tf_standing, dialogues[lineCount].spriteName[contextCount]));
+    }
 
     public void ShowDialogue(Dialogue[] p_dialogues)
     {
@@ -105,10 +105,10 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeWriter()
     {
         SettingUI(true);    // 대사창 이미지를 띄운다.
-       // ChangeSprite();		// 스탠딩 이미지를 변경한다.
+        ChangeSprite();		// 스탠딩 이미지를 변경한다.
 
         string t_ReplaceText = dialogues[lineCount].contexts[contextCount];   // 특수문자를 ,로 치환
-        t_ReplaceText = t_ReplaceText.Replace("`", ",");    // backtick을 comma로 변환
+        t_ReplaceText = t_ReplaceText.Replace("'", ",");    // backtick을 comma로 변환
 
         txt_Name.text = dialogues[lineCount].name; // 대사창에 캐릭터 이름 출력
 
@@ -126,6 +126,6 @@ public class DialogueManager : MonoBehaviour
     {
         go_DialogueBar.SetActive(p_flag);
         go_NameBar.SetActive(p_flag);
-        // go_standingImage.SetActive(p_flag);
+        go_standingImage.SetActive(p_flag);
     }
 }
