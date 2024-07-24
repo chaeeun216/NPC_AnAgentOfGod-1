@@ -6,28 +6,22 @@ public class PlayerAction : MonoBehaviour
 {
     public float Speed;
 
-    Rigidbody2D rigid;
+    public Rigidbody2D rigid;
     float h;
     float v;
     bool isHorizonMove;
     Animator anim;
 
-    Vector3 dirVec;
-    public GameObject scanObj;
-    public int checkScan;
+    public Vector3 dirVec;
+    public RaycastHit2D playerRayHit;
 
     InteractionController theInteractionController;
+    public InputManager theInputManager;
 
      void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        theInteractionController = FindObjectOfType<InteractionController>();
-
-        if (theInteractionController == null)
-        {
-            Debug.LogError("InteractionController not found in the scene.");
-        }
     }
 
     void Update()
@@ -83,14 +77,6 @@ public class PlayerAction : MonoBehaviour
         {
             dirVec = Vector3.right;
         }
-
-        // Scan Object
-        if (Input.GetKeyDown(KeyCode.Z) && scanObj != null)
-        {
-            Debug.Log(scanObj.name);
-            theInteractionController.CheckObject(scanObj);
-            theInteractionController.ZClick();
-        }
     }
 
     void FixedUpdate()
@@ -98,18 +84,5 @@ public class PlayerAction : MonoBehaviour
         // Move
         Vector2 moveVec = isHorizonMove ? new Vector2(h, 0) : new Vector2(0, v);
         rigid.velocity = moveVec * Speed;
-
-        // Ray
-        Debug.DrawRay(rigid.position, dirVec * 1.2f, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec, 1.2f, LayerMask.GetMask("EventObj"));
-
-        if (rayHit.collider != null) // 사물을 스캔함
-        {
-            scanObj = rayHit.collider.gameObject;
-        }
-        else // 스캔된 사물이 없음
-        {
-            scanObj = null;
-        }
     }
 }

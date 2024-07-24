@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             menu.SetActive(!menu.activeSelf);
         }

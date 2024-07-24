@@ -11,11 +11,14 @@ public class Dialogue
     [HideInInspector]	// 인스펙터 창에서 변수를 숨긴다.
     public string[] contexts; // 배열이라 여러 대사를 담을 수 있다.
 
-    [HideInInspector]
-    public string[] spriteName; // 여러 개의 스프라이트 이미지
+    //[HideInInspector]
+    //public string[] spriteName; // 여러 개의 스프라이트 이미지
 
-    [Header("카메라 타게팅 대상")]
-    public Transform tf_target;
+    //[Header("카메라 타게팅 대상")]
+    //public Transform tf_target;
+
+    //[HideInInspector]
+    //public string[] cutsceneName;   // 여러 개의 컷신 이미지
 }
 
 [System.Serializable]
